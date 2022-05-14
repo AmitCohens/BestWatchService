@@ -1,0 +1,160 @@
+#title{
+    color: #CEF0D4;
+    font-family: 'Rouge Script', cursive;
+    font-size: 130px;
+    font-weight: normal;
+    line-height: 48px;
+    margin: 0 0 50px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #082b34;
+    padding-top: 3%;
+}
+body{
+    background-color: #2f869c;
+}
+.btn {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+.btn:hover {
+    transition: 1s ease-in-out;
+    background: #4F95DA;
+}
+.btn:hover svg {
+    stroke-dashoffset: -480;
+}
+.btn span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
+.forButtons{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.theButtons{
+    width: 180px;
+    height: 60px;
+    position: absolute;
+}
+.listOfMovies{
+    background-color: #29ffff;
+    font-family: "Great Vibes", cursive;
+    font-size: 10px;
+    width: 48%;
+    display: flex;
+    padding-left: 1%;
+    padding-right: 1%;
+    flex-direction: row;
+    justify-content: space-between;
+    text-shadow: 0 1px 1px #fff;
+    border-radius: 20px;
+
+}
+.checked {
+    color: gold;
+}
+#movieList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+}
+#delete {
+    background-color: #29ffff;
+    color: red;
+}
+#actor{
+    background-color: #29ffff;
+}
+#edit{
+    background-color: #29ffff;
+}
+.buttons{
+    margin: 5px;
+    backface-visibility: hidden;
+    border-radius: .375rem;
+    border-style: solid;
+    border-width: .125rem;
+    box-sizing: border-box;
+    color: #212121;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Circular,Helvetica,sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.3;
+    padding: .875rem 1.125rem;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transform: translateZ(0) scale(1);
+    transition: transform .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+} /* CSS */
+.buttons:not(:disabled):hover {
+    transform: scale(1.05);
+}
+.buttons:not(:disabled):hover:active {
+    transform: scale(1.05) translateY(.125rem);
+}
+.buttons:focus {
+    outline: 0 solid transparent;
+}
+.buttons:focus:before {
+    content: "";
+    left: calc(-1*.375rem);
+    pointer-events: none;
+    position: absolute;
+    top: calc(-1*.375rem);
+    transition: border-radius;
+    user-select: none;
+}
+.buttons:focus:not(:focus-visible) {
+    outline: 0 solid transparent;
+}
+.buttons:focus:not(:focus-visible):before {
+    border-width: 0;
+}
+.buttons:not(:disabled):active {
+    transform: translateY(.125rem);
+}
+.imgMovie{
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+}
+.allButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
