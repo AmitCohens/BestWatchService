@@ -71,6 +71,7 @@ svg {
     justify-content: space-between;
     text-shadow: 0 1px 1px #fff;
     border-radius: 20px;
+    margin: 5px;
 
 }
 .checked {
@@ -80,7 +81,12 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto;
+    flex-direction: column;
+}
+.buttonsAndImage{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .details{
     display: flex;
@@ -149,12 +155,9 @@ svg {
     transform: translateY(.125rem);
 }
 .imgMovie{
-    width: 10%;
-    height: 10%;
-    border-radius: 50%;
+    width: 40%;
+    height: 40%;
 }
-.allButtons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.allButton{
+    flex-direction: row;
 }

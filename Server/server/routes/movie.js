@@ -108,8 +108,8 @@ module.exports = {
             });
         },true)
     },
-    get_movies:function (req){
+    get_movies:function (req,res){
         // readFile((data)=>{req.send(data);},true)
-        readFile((data)=>{req.send(data);},true)
+        readFile((data)=>{res.status(200).send(data);},true)
     },
 };

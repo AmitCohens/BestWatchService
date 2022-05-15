@@ -1,12 +1,13 @@
 let list;
 function loadPage(){
     $.ajax({
-        url: "http://localhost:3001/movie/5",
+        url: "http://localhost:3001/movie",
         type: "GET",
         dataType: "json",
         async: false,
         success: function (data) {
-            list=data;
+            list=Object.entries(data);
+            console.log(list);
             crateList();
         },
         error: function () {
@@ -17,30 +18,36 @@ function crateList(){
     // console.log(list);
     let x=$("#movieList")
     x.html("");
-    // for(let i=0;i<list.length;i++) {
-        let src ="<div class='listOfMovies' id='"+list["id"]+"'>";
+    for(let i=0;i<list.length;i++) {
+        let src ="<div class='listOfMovies' id='"+list[i][1]["id"]+"'>";
+
         src+="<div class='details'>"
-        src+="<h1>" + list["id"];
-        src+=") " + list["name"];
-        src+="</h1><br>";
-        src+=" " + list["date"];
-        src+="<div class='ratingStars'>"
-        for(let j=0;j<list["rating"]&&j<5;j++)
-            src+= "<span class='fa fa-star checked'></span>";
-        for(let j=0;j<5-list["rating"];j++)
-            src+= "<span class='fa fa-star'></span>";
+            src+="<h1>" + (i+1);
+            src+=") " + list[i][1]["name"];
+            src+="</h1><br>";
+            src+=" " + list[i][1]["date"];
+
+            src+="<div class='ratingStars'>"
+                for(let j=0;j<list[i][1]["rating"]&&j<5;j++)
+                    src+= "<span class='fa fa-star checked'></span>";
+                for(let j=0;j<5-list[i][1]["rating"];j++)
+                    src+= "<span class='fa fa-star'></span>";
+            src+="</div>";
+
         src+="</div>";
+
+        src+="<div class='buttonsAndImage'>"
+            src+="<div class='allButtons'>"
+                src+="<button id='edit' class='buttons' onclick='editMovie("+list[i][1]["id"]+")'>Edit</button>";
+                src+="<button id='actor' class='buttons' onclick='addActor("+list[i][1]["id"]+")'>update Actor</button>";
+                src+="<button id='delete' class='buttons' onclick='deleteMovie("+list[i][1]["id"]+")'>Delete</button>";
+            src+="</div>";
+            src+="<img class='imgMovie' src='";
+            src +="" + list[i][1]["picture"]+"'>";
         src+="</div>";
-        src+="<div class='allButtons'>"
-        src+="<button id='edit' class='buttons' onclick='editMovie("+list["id"]+")'>Edit</button>";
-        src+="<button id='actor' class='buttons' onclick='addActor("+list["id"]+")'>update Actor</button>";
-        src+="<button id='delete' class='buttons' onclick='deleteMovie("+list["id"]+")'>Delete</button>";
-        src+="</div>";
-        src+="<img class='imgMovie' src='";
-        src +="" + list["picture"]+"'>";
         src+="</div>";
         x.append(src);
-    // }
+    }
 
 }
 function autoRefresh(){
