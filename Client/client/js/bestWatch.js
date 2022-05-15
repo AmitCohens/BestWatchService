@@ -18,7 +18,7 @@ function crateList(){
     let x=$("#movieList")
     x.html("");
     // for(let i=0;i<list.length;i++) {
-        let src ="<div class='listOfMovies'>";
+        let src ="<div class='listOfMovies' id='"+list["id"]+"'>";
         src+="<div class='details'>"
         src+="<h1>" + list["id"];
         src+=") " + list["name"];
