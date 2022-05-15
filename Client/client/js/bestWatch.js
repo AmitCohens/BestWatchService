@@ -1,7 +1,7 @@
 let list;
 function loadPage(){
     $.ajax({
-        url: "http://localhost:3001/movie/1",
+        url: "http://localhost:3001/movie/5",
         type: "GET",
         dataType: "json",
         async: false,
@@ -10,7 +10,6 @@ function loadPage(){
             crateList();
         },
         error: function () {
-
         },
     })
 }
@@ -44,7 +43,21 @@ function crateList(){
     // }
 
 }
+function autoRefresh(){
+    window.location=window.location.href;
+}
 function deleteMovie(movieID){
+    $.ajax({
+        url: "http://localhost:3001/movie/"+movieID,
+        type: "DELETE",
+        async: false,
+        success: function () {
+            setInterval('autoRefresh()',1000);
+        },
+        error: function () {
+
+        },
+    })
 }
 function editMovie(movieID){
     console.log("edit");
