@@ -50,9 +50,7 @@ function crateList(){
     }
 
 }
-function autoRefresh(){
-    window.location=window.location.href;
-}
+
 function deleteMovie(movieID){
     $.ajax({
         url: "http://localhost:3001/movie/"+movieID,
