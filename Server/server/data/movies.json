@@ -41,32 +41,6 @@
       }
     }
   },
-  "3": {
-    "id": "3",
-    "name": "Inception",
-    "picture": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UY67_CR0,0,45,67_AL_.jpg",
-    "director": "Christopher Nolan",
-    "date": "01-09-2010",
-    "rating": 5,
-    "isSeries": false,
-    "actors": {
-      "actor_1_name": {
-        "name?": "Leonardo DiCaprio",
-        "picture": "https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_QL75_UX140_CR0,2,140,140_.jpg",
-        "site": "https://leonardodicaprio.com/"
-      },
-      "actor_2_name": {
-        "name?": "Joseph Gordon-Levitt",
-        "picture": "https://m.media-amazon.com/images/M/MV5BMTY3NTk0NDI3Ml5BMl5BanBnXkFtZTgwNDA3NjY0MjE@._V1_QL75_UX140_CR0,8,140,140_.jpg",
-        "site": "https://www.facebook.com/JoeGordonLevitt/"
-      },
-      "actor_3_name": {
-        "name?": "Marion Cotillard",
-        "picture": "https://m.media-amazon.com/images/M/MV5BMTQxNTEzNTkwNF5BMl5BanBnXkFtZTcwNzQ2NDIwOQ@@._V1_QL75_UX140_CR0,13,140,140_.jpg",
-        "site": "http://www.marion-cotillard.fr/"
-      }
-    }
-  },
   "4": {
     "id": "4",
     "name": "Better Call Saul",

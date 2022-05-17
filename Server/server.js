@@ -5,7 +5,7 @@ const port = 3001;
 
 const app=express();
 
-//restfull 
+//restfull
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -13,4 +13,5 @@ app.use('/', routers);
 
 const server = app.listen(port, () => {
     console.log('listening on port %s...', server.address().port);
+
 });

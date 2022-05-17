@@ -13,6 +13,8 @@ function loadPage(){
         error: function () {
         },
     })
+    let add=$("#addM");
+    add.click(addNewMovie);
 }
 function crateList(){
     // console.log(list);
@@ -68,4 +70,7 @@ function editMovie(movieID){
 }
 function addActor(movieID){
     console.log("add actor");
+}
+function addNewMovie(){
+    window.location.replace("http://localhost:3000/list/addNewMovie");
 }

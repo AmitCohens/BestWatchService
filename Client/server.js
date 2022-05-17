@@ -25,7 +25,7 @@ app.use(compression());
 app.get('/testcache', (req,res)=>{  res.setHeader("Cache-Control", "public, max-age=31536000, immutable"); res.send("te");});
 app.use('/main',setCache, express.static(path.join(__dirname, 'client/html/index.html')));
 app.use('/list', express.static(path.join(__dirname, 'client/html/index.html')));
-app.use('/add_user', express.static(path.join(__dirname, 'client/html/add_user_form.html')));
+app.use('/list/addNewMovie', express.static(path.join(__dirname, 'client/html/addMovie.html')));
 app.use('/js', setCache, express.static(path.join(__dirname, 'client/js')));
 app.use('/css', setCache, express.static(path.join(__dirname, 'client/css')));
 
