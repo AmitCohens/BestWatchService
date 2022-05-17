@@ -59,10 +59,9 @@ function deleteMovie(movieID){
         type: "DELETE",
         async: false,
         success: function () {
-            setInterval('autoRefresh()',1000);
+            window.loadPage();
         },
         error: function () {
-
         },
     })
 }
