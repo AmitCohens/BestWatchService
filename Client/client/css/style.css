@@ -62,7 +62,7 @@ svg {
 .listOfMovies{
     background-color: #29ffff;
     font-family: "Great Vibes", cursive;
-    font-size: 10px;
+    font-size: 15px;
     width: 48%;
     display: flex;
     padding-left: 1%;
@@ -95,9 +95,9 @@ svg {
 #delete {
     color: red;
 }
-#actor,#edit,#actors,#delete{
+#actor,#edit,#delete,#actorsList{
     background-color: #29ffff;
-    width:100px;
+    width:95px;
 }
 
 .buttons{
@@ -153,12 +153,9 @@ svg {
     transform: translateY(.125rem);
 }
 .imgMovie{
-    width: 40%;
-    height: 40%;
+    width: 100px;
+    height: 100px;
 }
 .allButton{
     flex-direction: row;
-}
-#actorsList{
-    width: 100px;
 }
