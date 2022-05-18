@@ -2,6 +2,7 @@
 let sizeOfArray=0;
 function newMovieFunc(){
     let check=$('input[name=series]:checked', '#movieOrSeries').val();
+
     check = check !== "Movie";
     let idNM=$("#id").val();
     let nameNM= $("#name").val();

@@ -44,7 +44,7 @@ function crateList(){
                 let stringID='"'+list[i][1]["id"];
                 stringID+='"';
                 src+="<button id='edit' class='buttons' onclick='editMovie("+stringID+")'>Edit</button>";
-                src+="<button id='actor' class='buttons' onclick='addActor("+stringID+")'>update Actor</button>";
+                src+="<button id='actor' class='buttons' onclick='addActor("+stringID+")'>add actor</button>";
                 src+="<button id='delete' class='buttons' onclick='deleteMovie("+stringID+")'>Delete</button>";
             src+="</div>";
             src+="<img class='imgMovie' src='";
