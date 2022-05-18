@@ -38,8 +38,7 @@ function updateMovieFunc(){
         url: "http://localhost:3001/movie/"+ID,
         type: "PUT",
         contentType: 'application/json',
-        data:JSON.stringify(newData
-        ),
+        data:JSON.stringify(newData),
         async: false,
         processData: false,
         encode: true,
@@ -69,7 +68,7 @@ $(document).ready(
             },
         })
         let sub=$("#sub");
-        sub.click(updateMovieFunc());
+        sub.click(updateMovieFunc);
         $("#Series").click(function(){
             $("#isSeries").show();
         });
@@ -96,18 +95,23 @@ function addSeasons(){
     return str;
 }
 function init(){
-    $("#id").attr("placeholder",list["id"]);
-    $("#name").attr("placeholder",list["name"]);
-    $("#director").attr("placeholder",list["director"]);
-    $("#picture").attr("placeholder",list["picture"]);
+    $("#id").attr("placeholder",list["id"]).attr("value",list["id"]);
+    $("#name").attr("placeholder",list["name"]).attr("value",list["name"]);
+    $("#director").attr("placeholder",list["director"]).attr("value",list["director"]);
+    $("#picture").attr("placeholder",list["picture"]).attr("value",list["picture"]);
     let str3='';
+    let num;
     if(list["isSeries"]){
         $("#Series").attr("checked",true);
         $("#isSeries").show();
         $("#allSeries").val(list["series_details"].length);
         for (let i=0;i<list["series_details"].length;i++)
-            str3+="<input type='number' class='sea' id='season"+(i+1)+"' placeholder='season_"+(i+1)+"' min=1>";
+            str3 += "<input type='number' class='sea' id='season" + (i + 1) + "' placeholder='season_" + (i + 1) + "' min=1 >";
         $("#seasons").html(str3);
+        for (let i=0;i<list["series_details"].length;i++)
+            $("#season" + (i + 1)).attr("value",list["series_details"][i]);
+
+
     }
     else
         $("#movie").attr("checked",true);
