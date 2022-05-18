@@ -63,9 +63,10 @@ function (){
     });
     $("#allSeries").change(function () {
         let str='';
+        sizeOfArray=this.value;
         for (let i=0;i<this.value;i++){
             str+="<input type='number' class='sea' id='season"+(i+1)+"' placeholder='season_"+(i+1)+"' min=1>";
-            sizeOfArray++;
+
         }
         $("#seasons").html(str);
 
@@ -78,6 +79,5 @@ function addSeasons(){
         str += $("#season" + (i)).val()+",";
     }
     str += $("#season" + (sizeOfArray)).val()+"]";
-    console.log(str);
     return str;
 }
