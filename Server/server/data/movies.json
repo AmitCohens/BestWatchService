@@ -71,18 +71,10 @@
     "id": "4",
     "name": "Better Call Saul",
     "picture": "https://m.media-amazon.com/images/M/MV5BMTMxOGM0NzItM2E0OS00YWYzLWEzNzUtODUzZTBjM2I4MTZkXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_UX67_CR0,0,67,98_AL_.jpg",
-    "director": "Peter Gould",
-    "date": "01-09-2015",
+    "director": "Peter amit",
+    "date": "2015-09-01",
     "rating": 4,
     "isSeries": true,
-    "series_details": [
-      10,
-      10,
-      10,
-      10,
-      10,
-      13
-    ],
     "actors": {
       "actor_1_name": {
         "name?": "Bob Odenkirk",

@@ -109,12 +109,13 @@ function init(){
             str3 += "<input type='number' class='sea' id='season" + (i + 1) + "' placeholder='season_" + (i + 1) + "' min=1 >";
         $("#seasons").html(str3);
         for (let i=0;i<list["series_details"].length;i++)
-            $("#season" + (i + 1)).attr("value",list["series_details"][i]);
-
+            $("#season" + (i + 1)).attr("value", list["series_details"][i]);
 
     }
-    else
-        $("#movie").attr("checked",true);
+    else {
+        $("#movie").attr("checked", true);
+        $("#isSeries").hide();
+    }
     let newDate=list["date"].split("-").reverse();
     newDate=newDate[0]+"-"+newDate[1]+"-"+newDate[2];
     $("#start").val(newDate);
