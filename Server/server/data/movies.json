@@ -4,7 +4,7 @@
     "name": "The Shawshank Redemption",
     "picture": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY67_CR0,0,45,67_AL_.jpg",
     "director": "Frank Darabont",
-    "date": "1994-10-01",
+    "date": "01-10-1994",
     "rating": 5,
     "isSeries": false,
     "actors": {
@@ -17,25 +17,15 @@
         "name?": "Morgan Freeman",
         "picture": "https://m.media-amazon.com/images/M/MV5BMTc0MDMyMzI2OF5BMl5BanBnXkFtZTcwMzM2OTk1MQ@@._V1_UX32_CR0,0,32,44_AL_.jpg",
         "site": "https://www.morganfreemandouble.com/"
-      },
-      "cx": {
-        "name": "cx",
-        "picture": "cd",
-        "site": "csd"
-      },
-      "amit": {
-        "name": "amit",
-        "picture": "sdsdsdsds",
-        "site": "wwwww"
       }
     }
   },
   "2": {
     "id": "2",
-    "name": "aaaaaaaaaaaaaaaaaaaa",
+    "name": "The Dark Knight",
     "picture": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UY67_CR0,0,45,67_AL_.jpg",
     "director": "Christopher Nolan",
-    "date": "1972-10-01",
+    "date": "01-10-1972",
     "rating": 4,
     "isSeries": false,
     "actors": {
@@ -81,10 +71,18 @@
     "id": "4",
     "name": "Better Call Saul",
     "picture": "https://m.media-amazon.com/images/M/MV5BMTMxOGM0NzItM2E0OS00YWYzLWEzNzUtODUzZTBjM2I4MTZkXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_UX67_CR0,0,67,98_AL_.jpg",
-    "director": "Peter amit",
-    "date": "2015-09-01",
+    "director": "Peter Gould",
+    "date": "01-09-2015",
     "rating": 4,
     "isSeries": true,
+    "series_details": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      13
+    ],
     "actors": {
       "actor_1_name": {
         "name?": "Bob Odenkirk",
@@ -126,22 +124,6 @@
         "name?": "Liron Vaisman",
         "picture": "https://m.media-amazon.com/images/M/MV5BYTIyMWFmZmEtNTc0My00NTEyLTg1OWUtNDU5ZWE2YzY3YzE2XkEyXkFqcGdeQXVyMjMyMzI4MzY@._V1_QL75_UY140_CR9,0,140,140_.jpg",
         "site": "https://www.facebook.com/%D7%9C%D7%99%D7%A8%D7%95%D7%9F-%D7%95%D7%99%D7%99%D7%A1%D7%9E%D7%9F-Liron-Vaisman-902265343195699/"
-      }
-    }
-  },
-  "Amit Cohen": {
-    "id": "Amit Cohen",
-    "name": "Amit Cohen",
-    "picture": "Amit Cohen",
-    "director": "Amit Cohen",
-    "date": "2022-01-01",
-    "rating": 1,
-    "isSeries": false,
-    "actors": {
-      "amit": {
-        "name": "amit",
-        "picture": "amit",
-        "site": "amit"
       }
     }
   }

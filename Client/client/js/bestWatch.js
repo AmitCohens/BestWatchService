@@ -23,26 +23,29 @@ function crateList(){
     x.html("");
 
     for(let i=0;i<list.length;i++) {
+        let stringID='"'+list[i][1]["id"];
+        stringID+='"';
         let src ="<div class='listOfMovies'>";
         src+="<div class='details'>"
             src+="<h1>" + (i+1);
             src+=") " + list[i][1]["name"];
             src+="</h1><br>";
             src+=" " + list[i][1]["date"];
-
+            if(list[i][1]["isSeries"])
+                src+="<br>Series";
+            else
+                src+="<br>Movie";
             src+="<div class='ratingStars'>"
                 for(let j=0;j<list[i][1]["rating"]&&j<5;j++)
                     src+= "<span class='fa fa-star checked'></span>";
                 for(let j=0;j<5-list[i][1]["rating"];j++)
                     src+= "<span class='fa fa-star'></span>";
             src+="</div>";
-
+        src+="<button id='actorsList' class='buttons'  onclick='editMovie("+stringID+")'>Actors</button>";
         src+="</div>";
-
         src+="<div class='buttonsAndImage'>"
             src+="<div class='allButtons'>"
-                let stringID='"'+list[i][1]["id"];
-                stringID+='"';
+
                 src+="<button id='edit' class='buttons' onclick='editMovie("+stringID+")'>Edit</button>";
                 src+="<button id='actor' class='buttons' onclick='addActor("+stringID+")'>add actor</button>";
                 src+="<button id='delete' class='buttons' onclick='deleteMovie("+stringID+")'>Delete</button>";
@@ -53,8 +56,6 @@ function crateList(){
         src+="</div>";
         x.append(src);
     }
-
-
 }
 
 function deleteMovie(movieID){

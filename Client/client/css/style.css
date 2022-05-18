@@ -93,15 +93,13 @@ svg {
     flex-direction: column;
 }
 #delete {
-    background-color: #29ffff;
     color: red;
 }
-#actor{
+#actor,#edit,#actors,#delete{
     background-color: #29ffff;
+    width:100px;
 }
-#edit{
-    background-color: #29ffff;
-}
+
 .buttons{
     margin: 5px;
     backface-visibility: hidden;
@@ -160,4 +158,7 @@ svg {
 }
 .allButton{
     flex-direction: row;
+}
+#actorsList{
+    width: 100px;
 }
