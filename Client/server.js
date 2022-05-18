@@ -26,6 +26,7 @@ app.get('/testcache', (req,res)=>{  res.setHeader("Cache-Control", "public, max-
 app.use('/main',setCache, express.static(path.join(__dirname, 'client/html/index.html')));
 app.use('/list', express.static(path.join(__dirname, 'client/html/index.html')));
 app.use('/list/addNewMovie', express.static(path.join(__dirname, 'client/html/addMovie.html')));
+app.use('/list/updateMovie/:id', express.static(path.join(__dirname, 'client/html/updateMovie.html')));
 app.use('/js', setCache, express.static(path.join(__dirname, 'client/js')));
 app.use('/css', setCache, express.static(path.join(__dirname, 'client/css')));
 

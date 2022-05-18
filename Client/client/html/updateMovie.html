@@ -2,32 +2,32 @@
 <html>
 <head>
   <title>Best2Watch-Amit Cohen</title>
-  <link rel = "icon" href ="../image/icon.jpg" type = "image/x-icon">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/addMovie.css">
+  <link rel = "icon" href ="../../image/icon.jpg" type = "image/x-icon">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/addMovie.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="../js/newMovie.js"></script>
+  <script src="../../js/update.js"></script>
 </head>
 <body >
 <div id="title">
-  new movie
+  update movie
 </div>
 <div class="box">
   <div class="inputs">
     <label for="id"></label>
-    <input type="text" class="form-control" name="name" id="id" placeholder="movie id" required>
+    <input type="text" class="form-control" name="name" id="id"  required disabled>
     <label for="name"></label>
-    <input type="text" class="form-control" name="name" id="name" placeholder="movie name" required>
+    <input type="text" class="form-control" name="name" id="name"  required>
     <label for="director"></label>
-    <input type="text" class="form-control" name="name" id="director" placeholder="movie director" required>
+    <input type="text" class="form-control" name="name" id="director"  required>
     <label for="picture"></label>
-    <input type="url" class="form-control" name="name" id="picture" placeholder="movie picture ('URL')" required>
+    <input type="url" class="form-control" name="name" id="picture"  required>
   </div>
   <label for="start"></label>
   <input type="date" id="start" name="trip-start" value="2022-01-01" min="1900-01-01" max="2022-12-31">
   <form id="movieOrSeries">
     <legend></legend>
-    <input type="radio" id="movie" name="series" value="Movie" checked>
+    <input type="radio" id="movie" name="series" value="Movie" >
     <label for="movie">Movie</label>
     <input type="radio" id="Series" name="series" value="Series">
     <label for="Series">Series</label>

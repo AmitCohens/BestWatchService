@@ -71,7 +71,7 @@ function deleteMovie(movieID){
     })
 }
 function editMovie(movieID){
-    console.log("edit");
+    window.location.replace("http://localhost:3000/list/updateMovie/"+movieID);
 }
 function addActor(movieID){
     console.log("add actor");
