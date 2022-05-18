@@ -14,6 +14,8 @@ function loadPage(){
     })
     let add=$("#addM");
     add.click(addNewMovie);
+    add=$("#addM2");
+    add.click(addNewMovie);
 }
 function crateList(){
     // console.log(list);

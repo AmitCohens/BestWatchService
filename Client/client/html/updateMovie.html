@@ -8,12 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="../js/newMovie.js"></script>
 </head>
-<body onload>
+<body >
 <div id="title">
-  update movie
+  new movie
 </div>
 <div class="box">
   <div class="inputs">
+    <label for="id"></label>
+    <input type="text" class="form-control" name="name" id="id" placeholder="movie id" required>
     <label for="name"></label>
     <input type="text" class="form-control" name="name" id="name" placeholder="movie name" required>
     <label for="director"></label>
@@ -30,10 +32,15 @@
     <input type="radio" id="Series" name="series" value="Series">
     <label for="Series">Series</label>
   </form>
-  <label for="rating"></label>
+  <div id="isSeries">
+    <label for="allSeries">number of seasons : </label>
+    <input type="number" id="allSeries" value=1 min=1>
+    <br>number of chapter : <br>
+    <div id="seasons"></div>
+  </div>
+  <label for="rating">rating: </label>
   <input type="number" id="rating"  min=1 max=5 value=1>
   <button type="submit" class="btn" id="sub">Submit <span class="fa fa-arrow-right"></span></button>
 </div>
 </body>
 </html>
-

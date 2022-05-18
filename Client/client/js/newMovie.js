@@ -74,10 +74,9 @@ function (){
 }
 );
 function addSeasons(){
-    let str='[';
-    for(let i=1;i<sizeOfArray;i++) {
-        str += $("#season" + (i)).val()+",";
+    let str=[];
+    for(let i=0;i<sizeOfArray;i++) {
+        str[i]=parseInt($("#season" + (i+1)).val());
     }
-    str += $("#season" + (sizeOfArray)).val()+"]";
     return str;
 }
