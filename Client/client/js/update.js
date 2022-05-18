@@ -33,7 +33,6 @@ function updateMovieFunc(){
             "series_details":seasons,
         }
     }
-    console.log(newData);
     $.ajax({
         url: "http://localhost:3001/movie/"+ID,
         type: "PUT",
@@ -43,7 +42,6 @@ function updateMovieFunc(){
         processData: false,
         encode: true,
         success: function (data) {
-            console.log(data);
             window.location.replace("http://localhost:3000/list");
         },
         error: function () {
