@@ -1,4 +1,6 @@
 let list;
+let ALERT_TITLE;
+let ALERT_BUTTON_TEXT = "Close";
 function loadPage(){
     $.ajax({
         url: "http://localhost:3001/movie",
@@ -41,7 +43,7 @@ function crateList(){
                 for(let j=0;j<5-list[i][1]["rating"];j++)
                     src+= "<span class='fa fa-star'></span>";
             src+="</div>";
-        src+="<button id='actorsList' class='buttons'  onclick='editMovie("+stringID+")'>Actors</button>";
+        src+="<button id='actorsList' class='buttons'  onclick='showActors("+stringID+")'>Actors</button>";
         src+="</div>";
         src+="<div class='buttonsAndImage'>"
             src+="<div class='allButtons'>"
@@ -78,4 +80,50 @@ function addActor(movieID){
 }
 function addNewMovie(){
     window.location.replace("http://localhost:3000/list/addNewMovie");
+}
+function showActors(movieID){
+    let str="";
+    ALERT_TITLE=list["name"];
+    for(let i=0;i<list[movieID]["actors"].length;i++){
+        str+="<div class='actorDetails'>";
+        str+="name : "+list[movieID]["actors"][i]["name"]+"<br>";
+        str+="site : "+list[movieID]["actors"][i]["site"]+"<br>";
+        str+="<img src='"+list[movieID]["actors"][i]["picture"]+"' alt='actorpic'>"
+        str+="</div>";
+        alert(str);
+    }
+}
+if(document.getElementById) {
+    alert = function(txt) {
+        createCustomAlert(txt);
+    }
+}
+function createCustomAlert(txt) {
+    d = document;
+    if(d.getElementById("modalContainer")) return;
+    mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+    mObj.id = "modalContainer";
+    mObj.style.height = d.documentElement.scrollHeight + "px";
+    alertObj = mObj.appendChild(d.createElement("div"));
+    alertObj.id = "alertBox";
+    if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
+    alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
+    alertObj.style.visiblity="visible";
+    h1 = alertObj.appendChild(d.createElement("h1"));
+    h1.appendChild(d.createTextNode(ALERT_TITLE));
+    msg = alertObj.appendChild(d.createElement("p"));
+    msg.innerHTML = txt;
+    btn = alertObj.appendChild(d.createElement("a"));
+    btn.id = "closeBtn";
+    btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+    btn.href = "#";
+    btn.focus();
+    btn.onclick = function() { removeCustomAlert();return false; }
+}
+
+function removeCustomAlert() {
+    document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
+}
+function ful(){
+    alert('Alert this pages');
 }

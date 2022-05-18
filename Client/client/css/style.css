@@ -159,3 +159,66 @@ svg {
 .allButton{
     flex-direction: row;
 }
+#alertBox {
+    position:center;
+    text-align: center;
+    width: 600px;
+    min-height:200px;
+    max-height:500px;
+    border:1px solid #fff;
+    border-radius: 20px;
+    background-color:#fff;
+    box-shadow: 7px 14px #888888;
+    top:35%;
+}
+
+#modalContainer > #alertBox {
+    position:fixed;
+}
+
+#alertBox h1 {
+    margin:0;
+    font:bold 1em Raleway,arial;
+    background-color: #050505;
+    color:#FFF;
+    border-bottom:1px solid #797474;
+    padding:10px 0 10px 5px;
+    border-radius: 20px;
+}
+#alertBox p {
+    height:100%;
+    width: 100%;
+    padding-left:2%;
+    font-size: 18px;
+    text-align:left;
+    vertical-align: baseline;
+}
+#alertBox #closeBtn {
+    display:block;
+    position:relative;
+    margin:10px auto 10px auto;
+    padding:7px;
+    border:0 none;
+    width:300px;
+    text-transform:uppercase;
+    text-align:center;
+    color:#FFF;
+    background-color: #000000;
+    border-radius: 20px;
+    text-decoration:none;
+    outline:0!important;
+}
+#mContainer {
+    position:center;
+    width:600px;
+    margin:auto;
+    padding:5px;
+    border-top:2px solid #fff;
+    border-bottom:2px solid #fff;
+}
+@media (max-width: 500px) {
+    #alertBox {
+        position: center;
+        width: 90%;
+    }
+}
