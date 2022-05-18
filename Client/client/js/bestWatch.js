@@ -74,7 +74,7 @@ function editMovie(movieID){
     window.location.replace("http://localhost:3000/list/updateMovie/"+movieID);
 }
 function addActor(movieID){
-    console.log("add actor");
+    window.location.replace("http://localhost:3000/list/addActor/"+movieID);
 }
 function addNewMovie(){
     window.location.replace("http://localhost:3000/list/addNewMovie");

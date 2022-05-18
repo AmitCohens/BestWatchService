@@ -17,6 +17,16 @@
         "name?": "Morgan Freeman",
         "picture": "https://m.media-amazon.com/images/M/MV5BMTc0MDMyMzI2OF5BMl5BanBnXkFtZTcwMzM2OTk1MQ@@._V1_UX32_CR0,0,32,44_AL_.jpg",
         "site": "https://www.morganfreemandouble.com/"
+      },
+      "cx": {
+        "name": "cx",
+        "picture": "cd",
+        "site": "csd"
+      },
+      "amit": {
+        "name": "amit",
+        "picture": "sdsdsdsds",
+        "site": "wwwww"
       }
     }
   },
@@ -126,6 +136,13 @@
     "director": "Amit Cohen",
     "date": "2022-01-01",
     "rating": 1,
-    "isSeries": false
+    "isSeries": false,
+    "actors": {
+      "amit": {
+        "name": "amit",
+        "picture": "amit",
+        "site": "amit"
+      }
+    }
   }
 }
