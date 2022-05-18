@@ -7,11 +7,13 @@ function newMovieFunc(){
     check = check !== "Movie";
     let idNM=$("#id").val();
     let nameNM= $("#name").val();
+    let pictureNM=$('#picture').val();
+    let directorNM=$("#director").val();
     let newData={
         "id":idNM,
         "name":nameNM,
-        "picture":$('#picture').val(),
-        "director": $("#director").val(),
+        "picture":pictureNM,
+        "director":directorNM,
         "date": $("#start").val(),
         "rating": parseInt($("#rating").val()),
         "isSeries": check,
