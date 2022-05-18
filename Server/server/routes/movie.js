@@ -28,10 +28,10 @@ const writeFile = (fileData, callback, filePath = dataPath, encoding = 'utf8') =
 module.exports = {
     create_movie:function (movieDetails,res){
         readFile(data => {
-
+                console.log(movieDetails.body);
                 if (!movieDetails.body||!movieDetails.body.id||!movieDetails.body.name||!movieDetails.body.picture||
                     !movieDetails.body.rating ||!movieDetails.body.director||!movieDetails.body.date)
-                    return res.status(500).send("Missing details");
+                    return res.status(400).send("Missing details");
                 else if(movieDetails.body.isSeries&&!movieDetails.body.series_details)
                     return res.status(500).send("line 36");
                 data[movieDetails.body.id] = movieDetails.body;

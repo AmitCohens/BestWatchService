@@ -7,7 +7,6 @@ function loadPage(){
         async: false,
         success: function (data) {
             list=Object.entries(data);
-            console.log(list);
             crateList();
         },
         error: function () {
@@ -20,9 +19,9 @@ function crateList(){
     // console.log(list);
     let x=$("#movieList")
     x.html("");
-    for(let i=0;i<list.length;i++) {
-        let src ="<div class='listOfMovies' id='"+list[i][1]["id"]+"'>";
 
+    for(let i=0;i<list.length;i++) {
+        let src ="<div class='listOfMovies'>";
         src+="<div class='details'>"
             src+="<h1>" + (i+1);
             src+=") " + list[i][1]["name"];
@@ -40,9 +39,11 @@ function crateList(){
 
         src+="<div class='buttonsAndImage'>"
             src+="<div class='allButtons'>"
-                src+="<button id='edit' class='buttons' onclick='editMovie("+list[i][1]["id"]+")'>Edit</button>";
-                src+="<button id='actor' class='buttons' onclick='addActor("+list[i][1]["id"]+")'>update Actor</button>";
-                src+="<button id='delete' class='buttons' onclick='deleteMovie("+list[i][1]["id"]+")'>Delete</button>";
+                let stringID='"'+list[i][1]["id"];
+                stringID+='"';
+                src+="<button id='edit' class='buttons' onclick='editMovie("+stringID+")'>Edit</button>";
+                src+="<button id='actor' class='buttons' onclick='addActor("+stringID+")'>update Actor</button>";
+                src+="<button id='delete' class='buttons' onclick='deleteMovie("+stringID+")'>Delete</button>";
             src+="</div>";
             src+="<img class='imgMovie' src='";
             src +="" + list[i][1]["picture"]+"'>";
@@ -51,9 +52,11 @@ function crateList(){
         x.append(src);
     }
 
+
 }
 
 function deleteMovie(movieID){
+    console.log(movieID);
     $.ajax({
         url: "http://localhost:3001/movie/"+movieID,
         type: "DELETE",
