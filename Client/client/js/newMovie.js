@@ -1,22 +1,36 @@
-function loadPage2(){
-    let sub=$("#sub");
-    sub.click(newMovieFunc);
-}
+
+let sizeOfArray=0;
 function newMovieFunc(){
-    let check=$('input[name=series]:checked', '#movieOrSeries').val()
+    let check=$('input[name=series]:checked', '#movieOrSeries').val();
     check = check !== "Movie";
     let idNM=$("#id").val();
     let nameNM= $("#name").val();
     let pictureNM=$('#picture').val();
     let directorNM=$("#director").val();
-    let newData={
-        "id":idNM,
-        "name":nameNM,
-        "picture":pictureNM,
-        "director":directorNM,
-        "date": $("#start").val(),
-        "rating": parseInt($("#rating").val()),
-        "isSeries": check,
+    let newData;
+    if(!check) {
+        newData = {
+            "id": idNM,
+            "name": nameNM,
+            "picture": pictureNM,
+            "director": directorNM,
+            "date": $("#start").val(),
+            "rating": parseInt($("#rating").val()),
+            "isSeries": check,
+        }
+    }
+    else {
+        let seasons=addSeasons();
+        newData = {
+            "id": idNM,
+            "name": nameNM,
+            "picture": pictureNM,
+            "director": directorNM,
+            "date": $("#start").val(),
+            "rating": parseInt($("#rating").val()),
+            "isSeries": check,
+            "series_details":seasons,
+        }
     }
     console.log(newData);
     $.ajax({
@@ -36,4 +50,34 @@ function newMovieFunc(){
         },
     })
 }
+$(document).ready(
+function (){
+    let sub=$("#sub");
+    sub.click(newMovieFunc);
+    $("#isSeries").hide();
+    $("#Series").click(function(){
+        $("#isSeries").show();
+    });
+    $("#movie").click(function(){
+        $("#isSeries").hide();
+    });
+    $("#allSeries").change(function () {
+        let str='';
+        for (let i=0;i<this.value;i++){
+            str+="<input type='number' class='sea' id='season"+(i+1)+"' placeholder='season_"+(i+1)+"' min=1>";
+            sizeOfArray++;
+        }
+        $("#seasons").html(str);
 
+    });
+}
+);
+function addSeasons(){
+    let str='[';
+    for(let i=1;i<sizeOfArray;i++) {
+        str += $("#season" + (i)).val()+",";
+    }
+    str += $("#season" + (sizeOfArray)).val()+"]";
+    console.log(str);
+    return str;
+}

@@ -89,3 +89,20 @@ input[type="date"], focus {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
 }
+#allSeries,#rating{
+    width: 35px;
+}
+.sea{
+    width: 80px;
+}
+#seasons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+}
+#isSeries{
+    font-family: Arial,sans-serif;
+}
