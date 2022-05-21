@@ -20,7 +20,6 @@ function loadPage(){
     add.click(addNewMovie);
 }
 function crateList(){
-    // console.log(list);
     let x=$("#movieList")
     x.html("");
 
@@ -149,10 +148,7 @@ $(document).ready(
 function sort(){
     let theColor=$("#down").css("color");
     let theValue=$("#mySelect").val();
-    console.log(theColor);
-    console.log(theValue);
         if(theValue==="Rating"&&theColor==="rgb(0, 0, 0)"){
-            console.log("151")
             list=list.sort(function (v1,v2){
                 if(v1[1]["rating"]>v2[1]["rating"])
                     return 1;
@@ -163,7 +159,6 @@ function sort(){
             })
         }
         if(theValue==="Name"&&theColor==="rgb(0, 0, 0)"){
-            console.log("162");
             list=list.sort(function (v1,v2){
                 if(v1[1]["name"]>v2[1]["name"])
                     return 1;
@@ -177,8 +172,6 @@ function sort(){
             list=list.sort(function (v1,v2){
                 let a=v1[1]["date"].split("-");
                 let b=v2[1]["date"].split("-");
-                console.log(a);
-                console.log(b);
                 if(a[2]>b[2])
                     return 1;
                 else if(a[2]===b[2]&&a[1]>b[1])
@@ -190,7 +183,6 @@ function sort(){
             })
         }
         if(theValue==="Rating"&&theColor==="rgb(255, 255, 255)"){
-            console.log("184");
             list=list.sort(function (v1,v2){
                 if(v1[1]["rating"]<v2[1]["rating"])
                     return 1;
@@ -201,7 +193,6 @@ function sort(){
             })
         }
         if(theValue==="Name"&&theColor==="rgb(255, 255, 255)"){
-            console.log("195");
             list=list.sort(function (v1,v2){
                 if(v1[1]["name"]<v2[1]["name"])
                     return 1;
@@ -216,8 +207,6 @@ function sort(){
             list=list.sort(function (v1,v2){
                 let a=v1[1]["date"].split("-");
                 let b=v2[1]["date"].split("-");
-                console.log(a);
-                console.log(b);
                 if(a[2]<b[2])
                     return 1;
                 else if(a[2]===b[2]&&a[1]<b[1])
