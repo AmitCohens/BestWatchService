@@ -8,11 +8,6 @@
     "rating": 5,
     "isSeries": false,
     "actors": {
-      "actor_1_name": {
-        "name": "Leonardo DiCaprio",
-        "picture": "https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_QL75_UX140_CR0,2,140,140_.jpg",
-        "site": "https://leonardodicaprio.com/"
-      },
       "actor_2_name": {
         "name": "Joseph Gordon-Levitt",
         "picture": "https://m.media-amazon.com/images/M/MV5BMTY3NTk0NDI3Ml5BMl5BanBnXkFtZTgwNDA3NjY0MjE@._V1_QL75_UX140_CR0,8,140,140_.jpg",

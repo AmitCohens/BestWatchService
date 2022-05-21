@@ -90,12 +90,30 @@ function showActors(movieID){
         if (list[i][1]["id"] === movieID)
             index = i;
     let actorList=Object.entries(list[index][1]["actors"]);
+
     for(let i=0;i<actorList.length;i++){
+        let ID='"'+actorList[i][0];
+        ID+='"';
         str+="name : "+actorList[i][1]["name"]+"<br>";
         str+="site : "+actorList[i][1]["site"]+"<br>";
-        str+="<img  class='imgMovie' src='"+actorList[i][1]["picture"]+"' alt='actorpic'>"
+        str+="<img  class='imgMovie' src='"+actorList[i][1]["picture"]+"' alt='actorpic'>";
+        str+="<button class='removeActor'";
+        str+="onclick='deleteActor("+movieID+","+ID+")'>Delete</button>";
         str+="<br>";
     }
     str+="</div>";
     $(pointer).append(str);
+}
+function deleteActor(movieID,actorID){
+    $.ajax({
+        url: "http://localhost:3001/movie/"+movieID+"/"+actorID,
+        type: "DELETE",
+        async: false,
+        success: function () {
+            window.loadPage();
+        },
+        error: function () {
+
+        },
+    });
 }
