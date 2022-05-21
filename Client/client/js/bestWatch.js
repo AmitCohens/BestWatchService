@@ -47,7 +47,7 @@ function crateList(){
             src+="<div class='allButtons'>"
                 src+="<button id='edit' class='buttons' onclick='editMovie("+stringID+")'>Edit</button>";
                 src+="<button id='actor' class='buttons' onclick='addActor("+stringID+")'>add actor</button>";
-                src+="<button id='delete' class='buttons' onclick='deleteMovie("+stringID+")'>Delete</button>";
+                src+="<button id='delete' class='buttons' onclick='deleteMovie("+stringID+")'><i class=\"fa fa-trash\"></i></button>";
             src+="</div>";
             src+="<img class='imgMovie' src='";
             src +="" + list[i][1]["picture"]+"'>";
@@ -79,27 +79,29 @@ function addNewMovie(){
 }
 function showActors(movieID){
     let pointer="#movie_"+movieID;
-    let pointer2="#actor_"+movieID;
+    let pointer2="#movie_"+movieID+"_";
     if($(pointer2).length!==0) {
         $(pointer2).remove();
         return;
     }
     let str="",index=0;
-    str+="<div class='actorDetails' id='actor_"+movieID+"'>";
+    str+="<div class='actorsDetails' id='movie_"+movieID+"_'>";
     for(let i=0;i<list.length;i++)
         if (list[i][1]["id"] === movieID)
             index = i;
     let actorList=Object.entries(list[index][1]["actors"]);
 
     for(let i=0;i<actorList.length;i++){
+        str+="<div id='actor_"+movieID+"' class='actor'>";
         let ID='"'+actorList[i][0];
         ID+='"';
-        str+="name : "+actorList[i][1]["name"]+"<br>";
-        str+="site : "+actorList[i][1]["site"]+"<br>";
+        str+="name : "+actorList[i][1]["name"]+"<br> ";
+        str+="site : "+actorList[i][1]["site"]+"<br> ";
         str+="<img  class='imgMovie' src='"+actorList[i][1]["picture"]+"' alt='actorpic'>";
         str+="<button class='removeActor'";
-        str+="onclick='deleteActor("+movieID+","+ID+")'>Delete</button>";
+        str+="onclick='deleteActor("+movieID+","+ID+")'><i class=\"fa fa-trash\"></i></button>";
         str+="<br>";
+        str+="</div>";
     }
     str+="</div>";
     $(pointer).append(str);

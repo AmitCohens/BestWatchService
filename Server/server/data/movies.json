@@ -7,18 +7,7 @@
     "date": "01-09-2010",
     "rating": 5,
     "isSeries": false,
-    "actors": {
-      "actor_2_name": {
-        "name": "Joseph Gordon-Levitt",
-        "picture": "https://m.media-amazon.com/images/M/MV5BMTY3NTk0NDI3Ml5BMl5BanBnXkFtZTgwNDA3NjY0MjE@._V1_QL75_UX140_CR0,8,140,140_.jpg",
-        "site": "https://www.facebook.com/JoeGordonLevitt/"
-      },
-      "actor_3_name": {
-        "name": "Marion Cotillard",
-        "picture": "https://m.media-amazon.com/images/M/MV5BMTQxNTEzNTkwNF5BMl5BanBnXkFtZTcwNzQ2NDIwOQ@@._V1_QL75_UX140_CR0,13,140,140_.jpg",
-        "site": "http://www.marion-cotillard.fr/"
-      }
-    }
+    "actors": {}
   },
   "4": {
     "id": "4",
@@ -37,11 +26,6 @@
       13
     ],
     "actors": {
-      "actor_1_name": {
-        "name": "Bob Odenkirk",
-        "picture": "https://m.media-amazon.com/images/M/MV5BOWM5MDJjYTItMTRkNC00NTQ4LThkNjUtNDY3Mzk0YWMwMTBhXkEyXkFqcGdeQXVyNzQzNDYwMA@@._V1_QL75_UX140_CR0,0,140,140_.jpg",
-        "site": "https://bobodenkirk.com/"
-      },
       "actor_2_name": {
         "name": "Rhea Seehorn",
         "picture": "https://m.media-amazon.com/images/M/MV5BYmE3MGY4M2UtOGViMC00M2E5LWE4ZmEtMDlmOThhNDljNDVhXkEyXkFqcGdeQXVyMjU1MTUxODI@._V1_QL75_UY140_CR49,0,140,140_.jpg",
