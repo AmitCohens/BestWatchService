@@ -1,5 +1,6 @@
 let list;
 function loadPage(){
+    $("#down").css("color","white");
     $.ajax({
         url: "http://localhost:3001/movie",
         type: "GET",
@@ -7,6 +8,7 @@ function loadPage(){
         async: false,
         success: function (data) {
             list=Object.entries(data);
+            sort();
             crateList();
         },
         error: function () {
@@ -41,6 +43,7 @@ function crateList(){
                 for(let j=0;j<5-list[i][1]["rating"];j++)
                     src+= "<span class='fa fa-star'></span>";
             src+="</div>";
+
         src+="<button id='actorsList' class='buttons'  onclick='showActors("+stringID+")'>Actors</button>";
         src+="</div>";
         src+="<div class='buttonsAndImage'>"
@@ -62,6 +65,7 @@ function deleteMovie(movieID){
         type: "DELETE",
         async: false,
         success: function () {
+            sort();
             window.loadPage();
         },
         error: function () {
@@ -112,10 +116,116 @@ function deleteActor(movieID,actorID){
         type: "DELETE",
         async: false,
         success: function () {
+            sort();
             window.loadPage();
         },
         error: function () {
 
         },
     });
+}
+$(document).ready(
+    function (){
+        $("#mySelect").change(function (){
+            sort();
+            crateList();
+        })
+        $("#up").click(
+            function (){
+                $("#up").css("color","white");
+                $("#down").css("color","black");
+                sort();
+                crateList();
+        })
+        $("#down").click(
+            function (){
+                $("#down").css("color","white");
+                $("#up").css("color","black");
+                sort();
+                crateList();
+            })
+    }
+)
+function sort(){
+    let theColor=$("#down").css("color");
+    let theValue=$("#mySelect").val();
+    console.log(theColor);
+    console.log(theValue);
+        if(theValue==="Rating"&&theColor==="rgb(0, 0, 0)"){
+            console.log("151")
+            list=list.sort(function (v1,v2){
+                if(v1[1]["rating"]>v2[1]["rating"])
+                    return 1;
+                else if(v1[1]["rating"]<v2[1]["rating"])
+                    return -1;
+                else
+                    return 0;
+            })
+        }
+        if(theValue==="Name"&&theColor==="rgb(0, 0, 0)"){
+            console.log("162");
+            list=list.sort(function (v1,v2){
+                if(v1[1]["name"]>v2[1]["name"])
+                    return 1;
+                else if(v1[1]["name"]<v2[1]["name"])
+                    return -1;
+                else
+                    return 0;
+            })
+        }
+        if(theValue==="Date"&&theColor==="rgb(0, 0, 0)"){
+            list=list.sort(function (v1,v2){
+                let a=v1[1]["date"].split("-");
+                let b=v2[1]["date"].split("-");
+                console.log(a);
+                console.log(b);
+                if(a[2]>b[2])
+                    return 1;
+                else if(a[2]===b[2]&&a[1]>b[1])
+                    return 1;
+                else if(a[2]===b[2]&&a[1]===b[1]&&a[0]>b[0])
+                    return 1;
+                else
+                    return -1;
+            })
+        }
+        if(theValue==="Rating"&&theColor==="rgb(255, 255, 255)"){
+            console.log("184");
+            list=list.sort(function (v1,v2){
+                if(v1[1]["rating"]<v2[1]["rating"])
+                    return 1;
+                else if(v1[1]["rating"]>v2[1]["rating"])
+                    return -1;
+                else
+                    return 0;
+            })
+        }
+        if(theValue==="Name"&&theColor==="rgb(255, 255, 255)"){
+            console.log("195");
+            list=list.sort(function (v1,v2){
+                if(v1[1]["name"]<v2[1]["name"])
+                    return 1;
+                else if(v1[1]["name"]>v2[1]["name"])
+                    return -1;
+                else
+                    return 0;
+            })
+        }
+        if(theValue==="Date"&&theColor==="rgb(255, 255, 255)"){
+
+            list=list.sort(function (v1,v2){
+                let a=v1[1]["date"].split("-");
+                let b=v2[1]["date"].split("-");
+                console.log(a);
+                console.log(b);
+                if(a[2]<b[2])
+                    return 1;
+                else if(a[2]===b[2]&&a[1]<b[1])
+                    return 1;
+                else if(a[2]===b[2]&&a[1]===b[1]&&a[0]<b[0])
+                    return 1;
+                else
+                    return -1;
+            })
+        }
 }

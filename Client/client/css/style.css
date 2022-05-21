@@ -44,8 +44,8 @@ svg {
     font-weight: 100;
 }
 .forButtons{
-    width: 400px;
-    height: 400px;
+    width: 100px;
+    height: 100px;
     position: absolute;
     left: 10%;
     top: 15%;
@@ -98,7 +98,6 @@ svg {
 #actor,#edit,#delete,#actorsList{
     background-color: #29ffff;
 }
-
 .buttons{
     margin: 5px;
     backface-visibility: hidden;
@@ -157,6 +156,8 @@ svg {
 }
 .allButton{
     flex-direction: column;
+    overflow: auto;
+    width: 100px;
 }
 .actorsDetails{
     display: flex;
@@ -211,4 +212,20 @@ svg {
 }
 .removeActor,#delete:active {
     opacity: .5;
+}
+#actorsList{
+    width: 100px;
+}
+#mySelect{
+    padding: 10px;
+    background-color:paleturquoise;
+    border:none;
+}
+#up,#down{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
 }
