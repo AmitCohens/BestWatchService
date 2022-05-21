@@ -58,9 +58,7 @@ function crateList(){
         x.append(src);
     }
 }
-
 function deleteMovie(movieID){
-    console.log(movieID);
     $.ajax({
         url: "http://localhost:3001/movie/"+movieID,
         type: "DELETE",
@@ -82,48 +80,22 @@ function addNewMovie(){
     window.location.replace("http://localhost:3000/list/addNewMovie");
 }
 function showActors(movieID){
-    let str="";
-    ALERT_TITLE=list["name"];
-    for(let i=0;i<list[movieID]["actors"].length;i++){
-        str+="<div class='actorDetails'>";
-        str+="name : "+list[movieID]["actors"][i]["name"]+"<br>";
-        str+="site : "+list[movieID]["actors"][i]["site"]+"<br>";
-        str+="<img src='"+list[movieID]["actors"][i]["picture"]+"' alt='actorpic'>"
-        str+="</div>";
-        alert(str);
-    }
-}
-if(document.getElementById) {
-    alert = function(txt) {
-        createCustomAlert(txt);
-    }
-}
-function createCustomAlert(txt) {
-    d = document;
-    if(d.getElementById("modalContainer")) return;
-    mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
-    mObj.id = "modalContainer";
-    mObj.style.height = d.documentElement.scrollHeight + "px";
-    alertObj = mObj.appendChild(d.createElement("div"));
-    alertObj.id = "alertBox";
-    if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
-    alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
-    alertObj.style.visiblity="visible";
-    h1 = alertObj.appendChild(d.createElement("h1"));
-    h1.appendChild(d.createTextNode(ALERT_TITLE));
-    msg = alertObj.appendChild(d.createElement("p"));
-    msg.innerHTML = txt;
-    btn = alertObj.appendChild(d.createElement("a"));
-    btn.id = "closeBtn";
-    btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
-    btn.href = "#";
-    btn.focus();
-    btn.onclick = function() { removeCustomAlert();return false; }
-}
+    let str="",index=0;
 
-function removeCustomAlert() {
-    document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
-}
-function ful(){
-    alert('Alert this pages');
+    for(let i=0;i<list.length;i++) {
+        console.log(list[i][1]["id"]);
+        if (list[i][1]["id"] === movieID)
+            index = i;
+    }
+    ALERT_TITLE=list[index][1]["name"];
+    console.log(list[index][1]["actors"]);
+    let actorList=Object.entries(list[index][1]["actors"]);
+    console.log(actorList);
+    for(let i=0;i<actorList.length;i++){
+        str+="<div class='actorDetails'>";
+        str+="name : "+actorList[i][1]["name"]+"<br>";
+        str+="site : "+actorList[i][1]["site"]+"<br>";
+        str+="<img src='"+actorList[i][1]["picture"]+"' alt='actorpic'>"
+        str+="</div>";
+    }
 }
