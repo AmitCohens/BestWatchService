@@ -88,9 +88,7 @@ function showActors(movieID){
             index = i;
     }
     ALERT_TITLE=list[index][1]["name"];
-    console.log(list[index][1]["actors"]);
     let actorList=Object.entries(list[index][1]["actors"]);
-    console.log(actorList);
     for(let i=0;i<actorList.length;i++){
         str+="<div class='actorDetails'>";
         str+="name : "+actorList[i][1]["name"]+"<br>";
