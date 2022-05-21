@@ -32,8 +32,10 @@ function crateList(){
             src+=") " + list[i][1]["name"];
             src+="</h1><br>";
             src+=" " + list[i][1]["date"];
-            if(list[i][1]["isSeries"])
-                src+="<br>Series";
+            if(list[i][1]["isSeries"]) {
+                src += "<br>Series";
+                src += "<br>seasons: "+list[i][1]["series_details"].length;
+            }
             else
                 src+="<br>Movie";
             src+="<div class='ratingStars'>"
@@ -172,11 +174,11 @@ function sort(){
             list=list.sort(function (v1,v2){
                 let a=v1[1]["date"].split("-");
                 let b=v2[1]["date"].split("-");
-                if(a[2]>b[2])
+                if(a[0]>b[0])
                     return 1;
-                else if(a[2]===b[2]&&a[1]>b[1])
+                else if(a[0]===b[0]&&a[1]>b[1])
                     return 1;
-                else if(a[2]===b[2]&&a[1]===b[1]&&a[0]>b[0])
+                else if(a[0]===b[0]&&a[1]===b[1]&&a[2]>b[2])
                     return 1;
                 else
                     return -1;
@@ -207,11 +209,11 @@ function sort(){
             list=list.sort(function (v1,v2){
                 let a=v1[1]["date"].split("-");
                 let b=v2[1]["date"].split("-");
-                if(a[2]<b[2])
+                if(a[0]<b[0])
                     return 1;
-                else if(a[2]===b[2]&&a[1]<b[1])
+                else if(a[0]===b[0]&&a[1]<b[1])
                     return 1;
-                else if(a[2]===b[2]&&a[1]===b[1]&&a[0]<b[0])
+                else if(a[0]===b[0]&&a[1]===b[1]&&a[2]<b[2])
                     return 1;
                 else
                     return -1;

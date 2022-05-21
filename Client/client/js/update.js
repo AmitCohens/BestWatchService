@@ -87,8 +87,10 @@ $(document).ready(
 );
 function addSeasons(){
     let str=[];
+    let pointer="";
     for(let i=0;i<sizeOfArray;i++) {
-        str[i]=parseInt($("#season" + (i+1)).val());
+        pointer="#season"+(i+1);
+        str[i]=parseInt($(pointer).val());
     }
     return str;
 }
@@ -97,24 +99,23 @@ function init(){
     $("#name").attr("placeholder",list["name"]).attr("value",list["name"]);
     $("#director").attr("placeholder",list["director"]).attr("value",list["director"]);
     $("#picture").attr("placeholder",list["picture"]).attr("value",list["picture"]);
+
     let str3='';
     let num;
     if(list["isSeries"]){
         $("#Series").attr("checked",true);
         $("#isSeries").show();
-        $("#allSeries").val(list["series_details"].length);
+        $("#allSeries").attr("value",list["series_details"].length);
+        sizeOfArray=list["series_details"].length;
         for (let i=0;i<list["series_details"].length;i++)
-            str3 += "<input type='number' class='sea' id='season" + (i + 1) + "' placeholder='season_" + (i + 1) + "' min=1 >";
+            str3 += "<input type='number' class='sea' id='season" + (i + 1) + "' placeholder='season_" + (i + 1) + "' min=1 value='"+list["series_details"][i]+"'>";
         $("#seasons").html(str3);
-        for (let i=0;i<list["series_details"].length;i++)
-            $("#season" + (i + 1)).attr("value", list["series_details"][i]);
-
     }
     else {
         $("#movie").attr("checked", true);
         $("#isSeries").hide();
     }
-    let newDate=list["date"].split("-").reverse();
+    let newDate=list["date"].split("-");
     newDate=newDate[0]+"-"+newDate[1]+"-"+newDate[2];
     $("#start").val(newDate);
     $("#rating").val(list["rating"]);
