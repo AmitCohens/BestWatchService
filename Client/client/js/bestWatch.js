@@ -1,6 +1,4 @@
 let list;
-let ALERT_TITLE;
-let ALERT_BUTTON_TEXT = "Close";
 function loadPage(){
     $.ajax({
         url: "http://localhost:3001/movie",
@@ -27,7 +25,7 @@ function crateList(){
     for(let i=0;i<list.length;i++) {
         let stringID='"'+list[i][1]["id"];
         stringID+='"';
-        let src ="<div class='listOfMovies'>";
+        let src ="<div class='listOfMovies' id='movie_"+list[i][1]["id"]+"'>";
         src+="<div class='details'>"
             src+="<h1>" + (i+1);
             src+=") " + list[i][1]["name"];
@@ -80,20 +78,24 @@ function addNewMovie(){
     window.location.replace("http://localhost:3000/list/addNewMovie");
 }
 function showActors(movieID){
+    let pointer="#movie_"+movieID;
+    let pointer2="#actor_"+movieID;
+    if($(pointer2).length!==0) {
+        $(pointer2).remove();
+        return;
+    }
     let str="",index=0;
-
-    for(let i=0;i<list.length;i++) {
-        console.log(list[i][1]["id"]);
+    str+="<div class='actorDetails' id='actor_"+movieID+"'>";
+    for(let i=0;i<list.length;i++)
         if (list[i][1]["id"] === movieID)
             index = i;
-    }
-    ALERT_TITLE=list[index][1]["name"];
     let actorList=Object.entries(list[index][1]["actors"]);
     for(let i=0;i<actorList.length;i++){
-        str+="<div class='actorDetails'>";
         str+="name : "+actorList[i][1]["name"]+"<br>";
         str+="site : "+actorList[i][1]["site"]+"<br>";
-        str+="<img src='"+actorList[i][1]["picture"]+"' alt='actorpic'>"
-        str+="</div>";
+        str+="<img  class='imgMovie' src='"+actorList[i][1]["picture"]+"' alt='actorpic'>"
+        str+="<br>";
     }
+    str+="</div>";
+    $(pointer).append(str);
 }
