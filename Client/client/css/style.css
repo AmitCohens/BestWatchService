@@ -10,12 +10,13 @@
     padding-top: 3%;
 }
 body{
-    background-color: #2f869c;
+    background-image: url("https://previews.123rf.com/images/innavlasova/innavlasova1806/innavlasova180600142/103915377-cinema-background-film-watching-popcorn-and-clapperboard-on-yellow-background-top-view-copy-space.jpg");
 }
 .btn {
     width: 180px;
     height: 60px;
     cursor: pointer;
+    color: #212121;
     background: transparent;
     border: 1px solid #91C9FF;
     outline: none;
@@ -58,6 +59,7 @@ svg {
     width: 180px;
     height: 60px;
     position: absolute;
+    color: #212121;
 }
 .listOfMovies{
     background-color: #29ffff;
@@ -222,7 +224,7 @@ svg {
     border:none;
 }
 #up,#down{
-    background-color: transparent;
+    background-color: #0fcece;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
