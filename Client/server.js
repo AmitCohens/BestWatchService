@@ -2,34 +2,28 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     path = require('path'),
     fs = require('fs'),
+    routers = require("./client/routes/routes.js"),
     compression = require('compression'),
     cors = require('cors');
-const port = 3000;
 
-const app=express();
+const port = 3001;
+const app = express();
 
-let setCache = function (req, res, next) {
-    // here you can define period in second, this one is 5 minutes
-    const period = 60 * 50
-    // you only want to cache for GET requests
-    if (req.method === 'GET') {
-      res.set('Cache-control', "public, max-age=600")
-    } else {
-      // for the other requests set strict no caching parameters
-      res.set('Cache-control', `no-store`)
-    }
-    // remember to call next() to pass on the request
-    next()
-  }
 app.use(compression());
-app.get('/testcache', (req,res)=>{  res.setHeader("Cache-Control", "public, max-age=31536000, immutable"); res.send("te");});
-app.use('/main',setCache, express.static(path.join(__dirname, 'client/html/index.html')));
-app.use('/list', express.static(path.join(__dirname, 'client/html/index.html')));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('/movie', routers);
+
+
+app.use(compression());
+app.get('/', function (req, res) {res.redirect('/list')});
+app.use('/list', express.static(path.join(__dirname, 'client/html')));
 app.use('/list/addNewMovie', express.static(path.join(__dirname, 'client/html/addMovie.html')));
 app.use('/list/updateMovie/:id', express.static(path.join(__dirname, 'client/html/updateMovie.html')));
 app.use('/list/addActor/:id', express.static(path.join(__dirname, 'client/html/addActorToMovie.html')));
-app.use('/js', setCache, express.static(path.join(__dirname, 'client/js')));
-app.use('/css', setCache, express.static(path.join(__dirname, 'client/css')));
+app.use('/js', express.static(path.join(__dirname, 'client/js')));
+app.use('/css', express.static(path.join(__dirname, 'client/css')));
 
 
 const server = app.listen(port, () => {
