@@ -45,7 +45,7 @@ function newMovieFunc(){
         encode: true,
         success: function (data) {
             console.log(data);
-            window.location.replace("http://localhost:3000/list");
+            window.location.replace("http://localhost:3001/list");
         },
         error: function () {
         },

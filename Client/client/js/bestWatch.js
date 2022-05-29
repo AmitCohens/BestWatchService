@@ -74,13 +74,13 @@ function deleteMovie(movieID){
     })
 }
 function editMovie(movieID){
-    window.location.replace("http://localhost:3000/list/updateMovie/"+movieID);
+    window.location.replace("http://localhost:3001/list/updateMovie/"+movieID);
 }
 function addActor(movieID){
-    window.location.replace("http://localhost:3000/list/addActor/"+movieID);
+    window.location.replace("http://localhost:3001/list/addActor/"+movieID);
 }
 function addNewMovie(){
-    window.location.replace("http://localhost:3000/list/addNewMovie");
+    window.location.replace("http://localhost:3001/list/addNewMovie");
 }
 function showActors(movieID){
     let pointer="#movie_"+movieID;

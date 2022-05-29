@@ -26,7 +26,7 @@ function newActorFunc(){
         processData: false,
         encode: true,
         success: function () {
-            window.location.replace("http://localhost:3000/list");
+            window.location.replace("http://localhost:3001/list");
         },
         error: function () {
         },
