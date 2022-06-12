@@ -9,6 +9,7 @@ const express = require('express'),
 const port = 3001;
 const app = express();
 
+
 app.use(compression());
 app.use(cors());
 app.use(express.json());
@@ -16,7 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/movie', routers);
 
 
-app.use(compression());
 app.get('/', function (req, res) {res.redirect('/list')});
 app.use('/list', express.static(path.join(__dirname, 'client/html')));
 app.use('/list/addNewMovie', express.static(path.join(__dirname, 'client/html/addMovie.html')));

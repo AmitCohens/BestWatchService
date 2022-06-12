@@ -33,7 +33,6 @@ function newMovieFunc(){
             "series_details":seasons,
         }
     }
-    console.log(newData);
     $.ajax({
         url: "http://localhost:3001/movie",
         type: "POST",

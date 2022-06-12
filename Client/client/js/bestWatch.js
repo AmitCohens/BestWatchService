@@ -32,6 +32,7 @@ function crateList(){
             src+=") " + list[i][1]["name"];
             src+="</h1><br>";
             src+=" " + list[i][1]["date"];
+            src+="<br>ID : "+list[i][1]["id"];
             if(list[i][1]["isSeries"]) {
                 src += "<br>Series";
                 src += "<br>seasons: "+list[i][1]["series_details"].length;
