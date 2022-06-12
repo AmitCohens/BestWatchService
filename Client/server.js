@@ -2,7 +2,7 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     path = require('path'),
     fs = require('fs'),
-    routers = require("./client/routes/routes.js"),
+    routers = require("./server/routes/routes.js"),
     compression = require('compression'),
     cors = require('cors');
 
