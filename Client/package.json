@@ -19,6 +19,9 @@
     "body-parser": "^1.18.3",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mongoose": "^6.3.6",
+    "mongoose-id-validator": "^0.6.0",
+    "mongoose-validator": "^2.1.0"
   }
 }

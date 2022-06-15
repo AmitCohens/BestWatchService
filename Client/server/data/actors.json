@@ -1,0 +1,37 @@
+{
+"actor_1_name": {
+"name": "Leonardo DiCaprio",
+"picture": "https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_QL75_UX140_CR0,2,140,140_.jpg",
+"site": "https://leonardodicaprio.com/"
+},
+"actor_2_name": {
+"name": "Joseph Gordon-Levitt",
+"picture": "https://m.media-amazon.com/images/M/MV5BMTY3NTk0NDI3Ml5BMl5BanBnXkFtZTgwNDA3NjY0MjE@._V1_QL75_UX140_CR0,8,140,140_.jpg",
+"site": "https://www.facebook.com/JoeGordonLevitt/"
+},
+"actor_3_name": {
+"name": "Marion Cotillard",
+"picture": "https://m.media-amazon.com/images/M/MV5BMTQxNTEzNTkwNF5BMl5BanBnXkFtZTcwNzQ2NDIwOQ@@._V1_QL75_UX140_CR0,13,140,140_.jpg",
+"site": "http://www.marion-cotillard.fr/"
+},
+"actor_1_name": {
+"name": "Christian Bale",
+"picture": "https://m.media-amazon.com/images/M/MV5BMTkxMzk4MjQ4MF5BMl5BanBnXkFtZTcwMzExODQxOA@@._V1_QL75_UX140_CR0,12,140,140_.jpg",
+"site": "https://christianbalefansite-blog.tumblr.com/"
+},
+"actor_2_name": {
+"name": "Heath Ledger",
+"picture": "https://m.media-amazon.com/images/M/MV5BMTI2NTY0NzA4MF5BMl5BanBnXkFtZTYwMjE1MDE0._V1_QL75_UX140_CR0,12,140,140_.jpg",
+"site": "https://www.facebook.com/Heath.Ledgerr/"
+},
+"actor_1_name": {
+"name": "Tim Robbins",
+"picture": "https://m.media-amazon.com/images/M/MV5BMTI1OTYxNzAxOF5BMl5BanBnXkFtZTYwNTE5ODI4._V1_QL75_UX140_CR0,0,140,140_.jpg",
+"site": "https://timrobbins.net/"
+},
+"actor_2_name": {
+"name": "Morgan Freeman",
+"picture": "https://m.media-amazon.com/images/M/MV5BMTc0MDMyMzI2OF5BMl5BanBnXkFtZTcwMzM2OTk1MQ@@._V1_UX32_CR0,0,32,44_AL_.jpg",
+"site": "https://www.morganfreemandouble.com/"
+}
+}

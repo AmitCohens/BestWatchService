@@ -5,7 +5,7 @@ const express = require('express'),
     routers = require("./server/routes/routes.js"),
     compression = require('compression'),
     cors = require('cors');
-
+require("../Client/server/DB/mongoose");
 const port = 3001;
 const app = express();
 
@@ -16,12 +16,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/movie', routers);
 
-
 app.get('/', function (req, res) {res.redirect('/list')});
 app.use('/list', express.static(path.join(__dirname, 'client/html')));
 app.use('/list/addNewMovie', express.static(path.join(__dirname, 'client/html/addMovie.html')));
 app.use('/list/updateMovie/:id', express.static(path.join(__dirname, 'client/html/updateMovie.html')));
-app.use('/list/addActor/:id', express.static(path.join(__dirname, 'client/html/addActorToMovie.html')));
+app.use('/list/addActor/:id', express.static(path.join(__dirname, 'client/html/addNewActor.html')));
 app.use('/js', express.static(path.join(__dirname, 'client/js')));
 app.use('/css', express.static(path.join(__dirname, 'client/css')));
 

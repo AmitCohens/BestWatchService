@@ -1,9 +1,5 @@
-let ID;
 $(document).ready(
     function (){
-        ID=window.location.pathname.split("/",4);
-        ID=ID[3];
-        $("#id").attr("placeholder",ID);
         let sub=$("#sub");
         sub.click(newActorFunc);
     }

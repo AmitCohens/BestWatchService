@@ -18,6 +18,10 @@ function loadPage(){
     add.click(addNewMovie);
     add=$("#addM2");
     add.click(addNewMovie);
+    add=$("#addA");
+    add.click(addActor);
+    add=$("#addA2");
+    add.click(addActor);
 }
 function crateList(){
     let x=$("#movieList")
@@ -62,6 +66,7 @@ function crateList(){
     }
 }
 function deleteMovie(movieID){
+    console.log(movieID);
     $.ajax({
         url: "http://localhost:3001/movie/"+movieID,
         type: "DELETE",
@@ -71,6 +76,7 @@ function deleteMovie(movieID){
             window.loadPage();
         },
         error: function () {
+            console.log("cant delete the movie");
         },
     })
 }

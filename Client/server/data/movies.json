@@ -8,11 +8,6 @@
     "rating": 3,
     "isSeries": false,
     "actors": {
-      "actor_1_name": {
-        "name": "Tim Robbins",
-        "picture": "https://m.media-amazon.com/images/M/MV5BMTI1OTYxNzAxOF5BMl5BanBnXkFtZTYwNTE5ODI4._V1_QL75_UX140_CR0,0,140,140_.jpg",
-        "site": "https://timrobbins.net/"
-      },
       "actor_2_name": {
         "name": "Morgan Freeman",
         "picture": "https://m.media-amazon.com/images/M/MV5BMTc0MDMyMzI2OF5BMl5BanBnXkFtZTcwMzM2OTk1MQ@@._V1_UX32_CR0,0,32,44_AL_.jpg",
@@ -64,40 +59,6 @@
         "name": "Marion Cotillard",
         "picture": "https://m.media-amazon.com/images/M/MV5BMTQxNTEzNTkwNF5BMl5BanBnXkFtZTcwNzQ2NDIwOQ@@._V1_QL75_UX140_CR0,13,140,140_.jpg",
         "site": "http://www.marion-cotillard.fr/"
-      }
-    }
-  },
-  "4": {
-    "id": "4",
-    "name": "Better Call Saul",
-    "picture": "https://m.media-amazon.com/images/M/MV5BMTMxOGM0NzItM2E0OS00YWYzLWEzNzUtODUzZTBjM2I4MTZkXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_UX67_CR0,0,67,98_AL_.jpg",
-    "director": "Peter Gould",
-    "date": "2022-06-02",
-    "rating": 1,
-    "isSeries": true,
-    "series_details": [
-      10,
-      13,
-      10,
-      10,
-      10,
-      13
-    ],
-    "actors": {
-      "actor_1_name": {
-        "name": "Bob Odenkirk",
-        "picture": "https://m.media-amazon.com/images/M/MV5BOWM5MDJjYTItMTRkNC00NTQ4LThkNjUtNDY3Mzk0YWMwMTBhXkEyXkFqcGdeQXVyNzQzNDYwMA@@._V1_QL75_UX140_CR0,0,140,140_.jpg",
-        "site": "https://bobodenkirk.com/"
-      },
-      "actor_2_name": {
-        "name": "Rhea Seehorn",
-        "picture": "https://m.media-amazon.com/images/M/MV5BYmE3MGY4M2UtOGViMC00M2E5LWE4ZmEtMDlmOThhNDljNDVhXkEyXkFqcGdeQXVyMjU1MTUxODI@._V1_QL75_UY140_CR49,0,140,140_.jpg",
-        "site": "https://www.instagram.com/rheaseehorn/"
-      },
-      "actor_3_name": {
-        "name": "Jonathan Banks",
-        "picture": "https://m.media-amazon.com/images/M/MV5BODI2OTYyOTQ4Nl5BMl5BanBnXkFtZTgwNTM3MTUxNDM@._V1_QL75_UX140_CR0,13,140,140_.jpg",
-        "site": "https://www.facebook.com/jonathanbanksactor"
       }
     }
   }

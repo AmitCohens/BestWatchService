@@ -1,6 +1,44 @@
 let ID;
 let sizeOfArray=0;
 let list;
+$(document).ready(
+    function (){
+        ID=window.location.pathname.split("/",4);
+        ID=parseInt(ID[3]);
+        $.ajax({
+            url: "http://localhost:3001/movie/"+ID,
+            type: "GET",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                list=data[0];
+                console.log(list)
+                init();
+            },
+            error: function () {
+                console.log("error");
+            },
+        })
+        let sub=$("#sub");
+        sub.click(updateMovieFunc);
+        $("#Series").click(function(){
+            $("#isSeries").show();
+        });
+        $("#movie").click(function(){
+            $("#isSeries").hide();
+        });
+        $("#allSeries").change(function () {
+            let str='';
+            sizeOfArray=this.value;
+            for (let i=0;i<this.value;i++){
+                str+="<input type='number' class='sea' id='season"+(i+1)+"' placeholder='season_"+(i+1)+"' min=1>";
+
+            }
+            $("#seasons").html(str);
+
+        });
+    }
+);
 function updateMovieFunc(){
     let check=$('input[name=series]:checked', '#movieOrSeries').val();
     check = check !== "Movie";
@@ -33,58 +71,24 @@ function updateMovieFunc(){
             "series_details":seasons,
         }
     }
+    newData=JSON.stringify(newData);
+    console.log(newData);
     $.ajax({
         url: "http://localhost:3001/movie/"+ID,
         type: "PUT",
         contentType: 'application/json',
-        data:JSON.stringify(newData),
-        async: false,
+        data:newData,
         processData: false,
         encode: true,
         success: function (data) {
             window.location.replace("http://localhost:3001/list");
         },
         error: function () {
+            console.log("Error in update");
         },
     })
 }
-$(document).ready(
-    function (){
-        ID=window.location.pathname.split("/",4);
-        ID=parseInt(ID[3]);
-        $.ajax({
-            url: "http://localhost:3001/movie/"+ID,
-            type: "GET",
-            dataType: "json",
-            async: false,
-            success: function (data) {
-                list=data;
-                init();
-            },
-            error: function () {
-                // console.log(list);
-            },
-        })
-        let sub=$("#sub");
-        sub.click(updateMovieFunc);
-        $("#Series").click(function(){
-            $("#isSeries").show();
-        });
-        $("#movie").click(function(){
-            $("#isSeries").hide();
-        });
-        $("#allSeries").change(function () {
-            let str='';
-            sizeOfArray=this.value;
-            for (let i=0;i<this.value;i++){
-                str+="<input type='number' class='sea' id='season"+(i+1)+"' placeholder='season_"+(i+1)+"' min=1>";
 
-            }
-            $("#seasons").html(str);
-
-        });
-    }
-);
 function addSeasons(){
     let str=[];
     let pointer="";
