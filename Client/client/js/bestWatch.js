@@ -93,6 +93,43 @@ function addNewMovie(){
     window.location.replace("http://localhost:3001/list/addNewMovie");
 }
 function showActors(movieID){
+    let dataActors;
+    let dataMovie;
+    $.ajax({
+        url: "http://localhost:3001/actors",
+        type: "GET",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+            dataActors=Object.entries(data);
+        },
+        error: function () {
+            console.log("error");
+        },
+    });
+    $.ajax({
+        url: "http://localhost:3001/movie/"+movieID,
+        type: "GET",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+            dataMovie=data;
+            dataMovie=dataMovie[0]["actors"];
+        },
+        error: function () {
+            console.log("error");
+        },
+    });
+    let x=[];
+    for(let i=0;i<dataMovie.length;i++){
+        for(let j=0;j<dataActors.length;j++){
+            if(dataMovie[i]===dataActors[j][1]["_id"]){
+                x.push(dataActors[j][1]);
+                break;
+            }
+        }
+    }
+    console.log(x);
     let pointer="#movie_"+movieID;
     let pointer2="#movie_"+movieID+"_";
     if($(pointer2).length!==0) {
@@ -106,13 +143,13 @@ function showActors(movieID){
             index = i;
     let actorList=Object.entries(list[index][1]["actors"]);
 
-    for(let i=0;i<actorList.length;i++){
+    for(let i=0;i<x.length;i++){
         str+="<div id='actor_"+movieID+"' class='actor'>";
-        let ID='"'+actorList[i][0];
+        let ID='"'+x[i]["_id"];
         ID+='"';
-        str+="name : "+actorList[i][1]["name"]+"<br> ";
-        str+="site : "+actorList[i][1]["site"]+"<br> ";
-        str+="<img  class='imgMovie' src='"+actorList[i][1]["picture"]+"' alt='actorpic'>";
+        str+="name : "+x[i]["name"]+"<br> ";
+        str+="site : "+x[i]["site"]+"<br> ";
+        str+="<img  class='imgMovie' src='"+x[i]["picture"]+"' alt='actorpic'>";
         str+="<button class='removeActor'";
         str+="onclick='deleteActor("+movieID+","+ID+")'><i class=\"fa fa-trash\"></i></button>";
         str+="<br>";

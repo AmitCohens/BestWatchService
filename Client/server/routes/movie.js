@@ -50,17 +50,16 @@ module.exports = {
         Movie.find({"id":ID}).then(movies=>res.send(movies).status(200)).catch(err=>res.status(500).send("not found"));
     },
     delete_actor_from_movie(req,res){
-        // readFile(data=> {
-        //     const movie_ID = movie_id.params["id"];
-        //     const actor_ID = movie_id.params["idActor"];
-        //     if(!movie_ID) return res.status(500).send('Error No ID');
-        //     if(!data[movie_ID]) return res.status(500).send('This movie does not exist');
-        //     if(!data[movie_ID]['actors'][actor_ID]) return res.status(400).send('this actor not exist');
-        //     data[movie_ID]['actors'][actor_ID]=undefined;
-        //     writeFile(JSON.stringify(data, null, 2), () => {
-        //         res.status(200).send('delete the actor');
-        //     });
-        // },true)
+        const ID=req.params["id"];
+        const actor=req.params["idActor"];
+        console.log(actor);
+        if (!ID) {
+            res.status(400);
+            res.send("no param");
+        }
+        let x=Movie.find({"id":ID});
+        console.log(x);
+
     },
     delete_movie:function (req,res){
             const movie_ID = req.params.movie_id;
