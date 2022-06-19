@@ -19,9 +19,9 @@ function loadPage(){
     add=$("#addM2");
     add.click(addNewMovie);
     add=$("#addA");
-    add.click(addActor);
+    add.click(addNewActor);
     add=$("#addA2");
-    add.click(addActor);
+    add.click(addNewActor);
 }
 function crateList(){
     let x=$("#movieList")
@@ -55,7 +55,7 @@ function crateList(){
         src+="<div class='buttonsAndImage'>"
             src+="<div class='allButtons'>"
                 src+="<button id='edit' class='buttons' onclick='editMovie("+stringID+")'>Edit</button>";
-                src+="<button id='actor' class='buttons' onclick='addActor("+stringID+")'>add actor</button>";
+                src+="<button id='actor' class='buttons' onclick='addActorToMovie("+stringID+")'>add actor</button>";
                 src+="<button id='delete' class='buttons' onclick='deleteMovie("+stringID+")'><i class=\"fa fa-trash\"></i></button>";
             src+="</div>";
             src+="<img class='imgMovie' src='";
@@ -83,8 +83,11 @@ function deleteMovie(movieID){
 function editMovie(movieID){
     window.location.replace("http://localhost:3001/list/updateMovie/"+movieID);
 }
-function addActor(movieID){
-    window.location.replace("http://localhost:3001/list/addActor/"+movieID);
+function addNewActor(){
+    window.location.replace("http://localhost:3001/list/addActor");
+}
+function addActorToMovie(movieID){
+    window.location.replace("http://localhost:3001/list/addActorToMovie/"+movieID);
 }
 function addNewMovie(){
     window.location.replace("http://localhost:3001/list/addNewMovie");

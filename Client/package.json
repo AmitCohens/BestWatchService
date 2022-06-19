@@ -22,6 +22,7 @@
     "express": "^4.16.4",
     "mongoose": "^6.3.6",
     "mongoose-id-validator": "^0.6.0",
-    "mongoose-validator": "^2.1.0"
+    "mongoose-validator": "^2.1.0",
+    "select2": "~4.0"
   }
 }

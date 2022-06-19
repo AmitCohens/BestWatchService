@@ -1,19 +1,25 @@
 
-const express = require('express')
-const Movie = require('../models/Movies')
+const express = require('express');
+const Movie = require('../models/Movies');
 const url = require("url");
-const router = new express.Router()
+const router = new express.Router();
 
 module.exports = {
     create_movie:function (movieDetails,res){
-
+                console.log(movieDetails);
                 if (!movieDetails.body||!movieDetails.body.id||!movieDetails.body.name||!movieDetails.body.picture||
                     !movieDetails.body.rating ||!movieDetails.body.director||!movieDetails.body.date)
                     return res.status(400).send("Missing details");
                 else if(movieDetails.body.isSeries&&!movieDetails.body.series_details)
-                    return res.status(500).send("line 36");
+                    return res.status(500).send("Missing details");
                 const newMovie=new Movie(movieDetails.body);
-                newMovie.save().then(newMovie=>res.status(200).send(newMovie)).catch(err=>res.status(400).send(err));
+                newMovie.save(function (err,result){
+                    if(err){
+                        res.status(500).send("Error on save");
+                    }else {
+                        res.status(201).send("Movie create!");
+                    }
+                });
     },
     update_movie:function (req, res) {
         Movie.findOneAndUpdate({"id":req.params.movie_id}, req.body, (err)=> {

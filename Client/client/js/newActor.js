@@ -14,7 +14,7 @@ function newActorFunc(){
         "site":siteNM,
     }
     $.ajax({
-        url: "http://localhost:3001/movie/"+ID,
+        url: "http://localhost:3001/newActor",
         type: "POST",
         contentType: 'application/json',
         data:JSON.stringify(newData),
@@ -25,6 +25,7 @@ function newActorFunc(){
             window.location.replace("http://localhost:3001/list");
         },
         error: function () {
+            console.log("Error on create");
         },
     })
 }

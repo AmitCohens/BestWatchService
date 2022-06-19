@@ -6,11 +6,6 @@ let MoviesSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: true,
-        // validate(value) {
-        //     if (!validator2.isString(value)) {
-        //         throw new Error('id is invalid')
-        //     }
-        // }
     },
     name: {
         type: String,
@@ -22,11 +17,6 @@ let MoviesSchema = new mongoose.Schema({
         required: true,
         trim: true,
         lowercase: false,
-        // validate(value) {
-        //     if (!validator2.isURL(value)) {
-        //         throw new Error('URL is invalid')
-        //     }
-        // }
     },
     director: {
         type: String,
@@ -37,11 +27,6 @@ let MoviesSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: true,
-        // validate(value) {
-        //     if (!validator2.isDate(value)) {
-        //         throw new Error('Date is invalid')
-        //     }
-        // }
     },
     rating :{
         type: Number,
@@ -49,11 +34,7 @@ let MoviesSchema = new mongoose.Schema({
         required: true,
         min:1,
         max:5,
-        // validate(value) {
-        //     if (!validator2.isNumber(value)||value<1||value>5) {
-        //         throw new Error('rating is invalid')
-        //     }
-        // }
+
     },
     isSeries:{
         type: Boolean,
@@ -66,7 +47,7 @@ let MoviesSchema = new mongoose.Schema({
         required: false,
     },
     actors:{
-        type:JSON,
+        type:Array,
         trim: true,
         required: false,
     }

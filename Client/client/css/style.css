@@ -231,3 +231,6 @@ svg {
     overflow: hidden;
     outline: none;
 }
+.options{
+    color: #0fcece;
+}

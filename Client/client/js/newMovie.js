@@ -33,20 +33,20 @@ function newMovieFunc(){
             "series_details":seasons,
         }
     }
+    newData=JSON.stringify(newData);
     $.ajax({
         url: "http://localhost:3001/movie",
         type: "POST",
         contentType: 'application/json',
-        data:JSON.stringify(newData
-        ),
+        data:newData,
         async: false,
         processData: false,
         encode: true,
         success: function (data) {
-            console.log(data);
             window.location.replace("http://localhost:3001/list");
         },
         error: function () {
+            console.log("ERRRRRRRRRR")
         },
     })
 }

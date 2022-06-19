@@ -12,22 +12,12 @@ let ActorSchema = new mongoose.Schema({
         required: true,
         trim: true,
         lowercase: false,
-        validate(value) {
-            if (!validator.isURL(value)) {
-                throw new Error('URL is invalid')
-            }
-        }
     },
     site:{
         type: String,
         required: true,
         trim: true,
         lowercase: false,
-        validate(value) {
-            if (!validator.isURL(value)) {
-                throw new Error('URL is invalid')
-            }
-        }
     }
 }, { timestamps: true });
 
